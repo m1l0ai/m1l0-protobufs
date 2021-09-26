@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package grpc.m1l0_services.dataservice;
+package m1l0_services.dataservice.v1;
 
-message DataCollectionRequest {
+message DataServiceCollectRequest {
 	string id = 1;
 	CollectionConfig config = 2;
 }
@@ -15,10 +15,10 @@ message CollectionConfig {
 	string output = 5;
 }
 
-message DataServiceLog {
+message DataServiceCollectResponse {
 	string body = 1;
 }
 
 service DataService {
-	rpc Collect(DataCollectionRequest) returns (stream DataServiceLog){}
+	rpc Collect(DataServiceCollectRequest) returns (stream DataServiceCollectResponse){}
 }

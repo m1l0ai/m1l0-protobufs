@@ -1,0 +1,7 @@
+version: v1
+plugins:
+  - name: python-grpc
+    path: ./grpc_python_plugin
+    out: .
+  - name: python
+    out: .

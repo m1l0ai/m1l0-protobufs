@@ -8,7 +8,7 @@ with open(os.path.join(HERE, "README.md")) as f:
 
 setup(
     name="m1l0-protobufs",
-    version="0.7.1",
+    version="0.8.1",
     description="M1L0 Protobufs",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -16,13 +16,12 @@ setup(
     author="Chee Yeo",
     author_email="ckyeo.1@gmail.com",
     license="MIT",
-    packages=find_packages(exclude=[
-        'protobufs',
-        'protobufs/*.proto',
-        'tests', 
-        'tests.*',
-        '__pycache__',
-        'buf.*.yaml'
+    packages=find_packages(include=[
+        "m1l0_services",
+        "m1l0_services.*"
     ]),
-    include_package_data=False
+    include_package_data=False,
+    install_requires=[
+        "grpcio-tools ~= 1.37.1"
+    ]
 )
