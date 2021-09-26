@@ -1,4 +1,4 @@
-name: ci
+name: buf-pull
 on: pull_request
 jobs:
   build:
