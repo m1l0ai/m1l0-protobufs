@@ -9,6 +9,9 @@ jobs:
       - uses: bufbuild/buf-lint-action@v1
         with:
           input: "grpc"
+      # TODO: Need to investigate buf docs
+      # on how to use this properly if we need to update
+      # protobufs regularly?
       # - uses: bufbuild/buf-breaking-action@v1
       #   with:
       #     input: "grpc"
