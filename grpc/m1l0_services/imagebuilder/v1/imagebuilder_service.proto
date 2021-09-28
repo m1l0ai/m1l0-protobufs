@@ -47,9 +47,19 @@ message BuildResponse {
   string body = 1;
 }
 
+message PushRequest {
+  string id = 1;
+  BuildConfig config = 2;
+  repeated BuildTags tags = 3;
+}
+
+message PushResponse {
+  string body = 1;
+}
+
 service ImageBuilderService {
   // Simple RPC service for building images
   rpc Build(BuildRequest) returns (stream BuildResponse){}
-  rpc Push(BuildRequest) returns (stream BuildResponse){}
+  rpc Push(PushRequest) returns (stream PushResponse){}
   rpc Find(FindRequest) returns (FindResponse){}
 }
