@@ -12,7 +12,12 @@ message CollectionConfig {
 	repeated string pattern = 2;
 	string query = 3;
 	repeated int64 split = 4;
-	string output = 5;
+	OutputConfig output = 5;
+}
+
+message OutputConfig {
+	string output = 1;
+	string format = 2;
 }
 
 message DataServiceCollectResponse {

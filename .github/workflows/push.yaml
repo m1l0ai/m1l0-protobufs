@@ -8,21 +8,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # - uses: bufbuild/buf-setup-action@v0.5.0
-      # - uses: bufbuild/buf-lint-action@v1
-      #   with:
-      #     input: "grpc"
-      # - uses: bufbuild/buf-breaking-action@v1
-      #   with:
-      #     input: "grpc"
-      #     against: 'https://github.com/${GITHUB_REPOSITORY}.git#branch=main,ref=HEAD~1'
+      - uses: bufbuild/buf-setup-action@v0.5.0
+      - uses: bufbuild/buf-lint-action@v1
+        with:
+          input: "grpc"
+      - uses: bufbuild/buf-breaking-action@v1
+        with:
+          input: "grpc"
+          against: 'https://github.com/${GITHUB_REPOSITORY}.git#branch=main,ref=HEAD~1'
       # TODO: Build and push to buf repo...
       # - uses: bufbuild/buf-push-action@v1
       #   with:
       #     input: 'proto'
       #     buf_token: ${{ secrets.BUF_TOKEN }}
-      
-      # TODO: Build and push to pypi
+
       - uses: actions/setup-python@v2
         name: Setup python
         with:
