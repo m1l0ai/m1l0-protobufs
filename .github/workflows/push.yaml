@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: bufbuild/buf-setup-action@v0.5.0
-      - uses: bufbuild/buf-lint-action@v1
-        with:
-          input: "grpc"
-      - uses: bufbuild/buf-breaking-action@v1
-        with:
-          input: "grpc"
-          against: 'https://github.com/${GITHUB_REPOSITORY}.git#branch=main,ref=HEAD~1'
+      # - uses: bufbuild/buf-setup-action@v0.5.0
+      # - uses: bufbuild/buf-lint-action@v1
+      #   with:
+      #     input: "grpc"
+      # - uses: bufbuild/buf-breaking-action@v1
+      #   with:
+      #     input: "grpc"
+      #     against: 'https://github.com/${GITHUB_REPOSITORY}.git#branch=main,ref=HEAD~1'
       # TODO: Build and push to buf repo...
       # - uses: bufbuild/buf-push-action@v1
       #   with:
@@ -34,9 +34,10 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Build dist
         run: |
+          make build
           make dist
       - name: Publish dist to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
           user: __token__
-          password: ${{ secrets.PYPI_TOKEN }}
+          password: ${{ secrets.PYPI_PUBLIC_TOKEN }}

@@ -9,9 +9,9 @@ message DataServiceCollectRequest {
 
 message CollectionConfig {
 	string source = 1;
-	string pattern = 2;
+	repeated string pattern = 2;
 	string query = 3;
-	string split = 4;
+	repeated int64 split = 4;
 	string output = 5;
 }
 

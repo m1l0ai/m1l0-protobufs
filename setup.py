@@ -8,7 +8,7 @@ with open(os.path.join(HERE, "README.md")) as f:
 
 setup(
     name="m1l0-protobufs",
-    version="0.8.1",
+    version="0.8.2",
     description="M1L0 Protobufs",
     long_description=README,
     long_description_content_type="text/markdown",
