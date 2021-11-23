@@ -139,4 +139,7 @@ cython_debug/
 
 ## Custom ignores
 m1l0_services/*
+m1l0_pipeline/*
 grpc_python_plugin
+*.config
+test*.py

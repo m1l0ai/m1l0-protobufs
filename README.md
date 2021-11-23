@@ -33,12 +33,13 @@ https://pypi.org/project/m1l0-protobufs/
 https://docs.buf.build
 
 ```
-buf lint # apply liniting to protobuf files
+# shows which packages will be built; used as debugging
 
-buf build # if no errors means its ok?
+buf build -o -#format=json | jq '.file[] | .package' | sort | uniq | head
 
 buf ls-files
 
+buf lint # apply liniting to protobuf files
 ```
 
 
