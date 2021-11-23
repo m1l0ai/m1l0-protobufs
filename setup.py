@@ -19,6 +19,7 @@ setup(
     packages=find_packages(include=[
         "m1l0_services",
         "m1l0_services.*"
+        "m1l0_pipeline"
     ]),
     include_package_data=False,
     install_requires=[
