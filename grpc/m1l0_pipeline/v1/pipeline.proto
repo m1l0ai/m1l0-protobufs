@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package m1l0_pipeline.v1;
+
+import "m1l0_services/dataservice/v1/data_service.proto";
+
+message PipelineConfig {
+  string id = 1;
+  m1l0_services.dataservice.v1.DataServiceCollectRequest data = 2;
+}
