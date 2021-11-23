@@ -27,9 +27,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install setuptools wheel twine
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      # NOTE: WE CAN'T USE buf as it re;ies on grpc_python_plugin; need to figure out how to build it and use it with buf above...
       - name: Build dist
         run: |
-          make buildbuf
+          make build
           make dist
       - name: Publish dist to PyPI
         uses: pypa/gh-action-pypi-publish@master
