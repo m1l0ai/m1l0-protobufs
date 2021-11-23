@@ -14,18 +14,18 @@ buildbuf:
 build:
 	python -m grpc_tools.protoc -I grpc --python_out=. --grpc_python_out=. grpc/m1l0_services/imagebuilder/v1/*.proto
 
-	touch m1l0_services/__init__.py
-	touch m1l0_services/imagebuilder/__init__.py
-	touch m1l0_services/imagebuilder/v1/__init__.py
-
 	python -m grpc_tools.protoc -I grpc --python_out=. --grpc_python_out=. grpc/m1l0_services/dataservice/v1/*.proto
-	touch m1l0_services/dataservice/__init__.py
-	touch m1l0_services/dataservice/v1/__init__.py
 
 	python -m grpc_tools.protoc -I grpc --python_out=. --grpc_python_out=. grpc/m1l0_pipeline/v1/*.proto
 
+	touch m1l0_services/__init__.py
+	touch m1l0_services/imagebuilder/__init__.py
+	touch m1l0_services/imagebuilder/v1/__init__.py
+	touch m1l0_services/dataservice/__init__.py
+	touch m1l0_services/dataservice/v1/__init__.py
 	touch m1l0_pipeline/__init__.py
 	touch m1l0_pipeline/v1/__init__.py
+
 
 dist:
 	python setup.py bdist_wheel
