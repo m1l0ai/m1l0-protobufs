@@ -5,6 +5,11 @@ package m1l0_pipeline.v1;
 import "m1l0_services/dataservice/v1/data_service.proto";
 
 message PipelineConfig {
-  string id = 1;
+  Project project = 1;
   m1l0_services.dataservice.v1.DataServiceCollectRequest data = 2;
+}
+
+message Project {
+  string project_name = 1;
+  string flow_name = 2;
 }

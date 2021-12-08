@@ -5,6 +5,7 @@ package m1l0_services.dataservice.v1;
 message DataServiceCollectRequest {
 	string id = 1;
 	CollectionConfig config = 2;
+	CustomConfig custom = 3;
 }
 
 message CollectionConfig {
@@ -13,19 +14,20 @@ message CollectionConfig {
 	string query = 3;
 	repeated int64 split = 4;
 	OutputConfig output = 5;
-	CustomConfig custom = 6;
 }
 
 message CustomConfig {
-	string main_file = 1;
-	string setup_file = 2;
+    string source = 1;
+	string main_file = 2;
+	string setup_file = 3;
 	// multiple inputs to pass to main file
-	repeated CustomInputOption custom_option = 3;
+	repeated CustomInputOption custom_option = 4;
 }
 
 message CustomInputOption {
     string name = 1;
-    string value = 2;
+    string type = 2;
+    string value = 3;
 }
 
 message OutputConfig {
