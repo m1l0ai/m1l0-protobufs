@@ -4,8 +4,8 @@ package m1l0_services.dataservice.v1;
 
 message DataServiceCollectRequest {
 	string id = 1;
-	oneof config {
-	  CollectionConfig systemconfig = 2;
+	oneof parameters {
+	  CollectionConfig config = 2;
 	  CustomConfig custom = 3;
 	}
 }
