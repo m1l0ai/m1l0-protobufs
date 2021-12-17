@@ -38,7 +38,20 @@ message OutputConfig {
 }
 
 message DataServiceCollectResponse {
-	string body = 1;
+	// string body = 1;
+	oneof body {
+	  Result result = 1;
+	  Error error = 2;
+	}
+}
+
+message Result {
+	string data = 1;
+}
+
+message Error {
+	string message = 1;
+	int64 code = 2;
 }
 
 service DataService {
